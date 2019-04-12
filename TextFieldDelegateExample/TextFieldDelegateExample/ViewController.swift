@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textLabel: UILabel!
@@ -21,16 +22,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        textLabel.text = textField.text
+        textLabel.text = string
         
         return true
     }
-
-
 }
+
 
 
 
