@@ -9,44 +9,13 @@
 import Foundation
 import CoreLocation
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
-    let manager = CLLocationManager()
-    
-    override init() {
-        super.init()
+class LocationManager{
+   
+        let manager = CLLocationManager()
         
-        manager.delegate = self
-        manager.requestWhenInUseAuthorization()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            manager.requestLocation()
+        init() {
+            manager.requestWhenInUseAuthorization()
         }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations.first!)
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
